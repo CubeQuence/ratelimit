@@ -1,8 +1,8 @@
 {
-    "name": "cubequence/template",
-    "description": "PACKAGE_DESCRIPTION",
+    "name": "cubequence/ratelimit",
+    "description": "Ratelimit logic",
     "keywords": [
-        "PACKAGE_TAG",
+        "ratelimit",
         "cubequence"
     ],
     "license": "MIT",
@@ -27,13 +27,13 @@
     },
     "autoload": {
         "psr-4": {
-            "CQ\\Template\\": "src/Template"
+            "CQ\\Ratelimit\\": "src/Ratelimit"
         }
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "support": {
-        "issues": "https://github.com/CubeQuence/Template/issues",
-        "source": "https://github.com/CubeQuence/Template"
+        "issues": "https://github.com/CubeQuence/ratelimit/issues",
+        "source": "https://github.com/CubeQuence/ratelimit"
     }
 }
