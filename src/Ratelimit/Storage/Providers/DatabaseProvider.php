@@ -1,16 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace CQ\Ratelimit\Storage\Providers;
 
 use CQ\Ratelimit\Storage\StorageProvider;
 
 final class DatabaseProvider extends StorageProvider
 {
-    public function __construct(private $db)
-    {
+    public function __construct(
+        private $db
+    ) {
     }
 
-    public function createEntry(string $key, int $resetAt) : array
+    public function createEntry(string $key, int $resetAt): array
     {
         return $this->db::create(
             table: 'cq_ratelimit',
@@ -22,7 +25,7 @@ final class DatabaseProvider extends StorageProvider
         );
     }
 
-    public function getEntry(string $key) : array
+    public function getEntry(string $key): array
     {
         return $this->db::get(
             table: 'cq_ratelimit',
@@ -34,7 +37,7 @@ final class DatabaseProvider extends StorageProvider
         );
     }
 
-    public function increaseEntry(string $key) : void
+    public function increaseEntry(string $key): void
     {
         $this->db::update(
             table: 'cq_ratelimit',
