@@ -19,7 +19,7 @@ Ratelimit logic for CubeQuence/framework
 
 ## Example
 
-Look at the `examples` folder
+Look at https://github.com/CubeQuence/framework/blob/master/src/CubeQuence/Middleware/RatelimitMiddleware.php
 
 ## Security Vulnerabilities
 
