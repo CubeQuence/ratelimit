@@ -25,7 +25,7 @@ final class DatabaseProvider extends StorageProvider
         );
     }
 
-    public function getEntry(string $key): array
+    public function getEntry(string $key): array|null
     {
         return $this->db::get(
             table: 'cq_ratelimit',
