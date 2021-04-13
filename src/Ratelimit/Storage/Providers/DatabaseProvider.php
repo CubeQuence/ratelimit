@@ -15,12 +15,22 @@ final class DatabaseProvider extends StorageProvider
 
     public function createEntry(string $key, int $resetAt): array
     {
+        [$identifier] = explode(
+            ':',
+            string: $key,
+        );
+
+        $this->db::delete(
+            table: 'cq_ratelimit',
+            where: ['key[~]' => $identifier.'%']
+        );
+
         return $this->db::create(
             table: 'cq_ratelimit',
             data: [
                 'key' => $key,
                 'current' => 0,
-                'reset_at' => time() + $resetAt,
+                'reset_at' => $resetAt,
             ]
         );
     }
