@@ -25,7 +25,7 @@ final class Ratelimit
         $hit = $this->hit($key, $rate);
 
         return new StatusModel(
-            current: $hit['current'],
+            current: (int) $hit['current'],
             limit: $rate->getOperations(),
             resetAt: $hit['reset_at']
         );
@@ -33,7 +33,10 @@ final class Ratelimit
 
     private function key(string $identifier, int $interval): string
     {
-        $identifier = base64_encode($identifier);
+        $identifier = hash(
+            algo: 'sha256',
+            data: $identifier
+        );
 
         return "${identifier}:${interval}:" . floor(time() / $interval);
     }
@@ -50,8 +53,9 @@ final class Ratelimit
         }
 
         if ($entry['current'] <= $rate->getOperations()) {
-            // TODO: check if returns correct data
-            $entry = $this->storageProvider->increaseEntry(key: $key);
+            $this->storageProvider->increaseEntry(key: $key);
+
+            $entry['current'] += 1;
         }
 
         return $entry;

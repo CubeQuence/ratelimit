@@ -19,7 +19,7 @@ final class DatabaseProvider extends StorageProvider
             table: 'cq_ratelimit',
             data: [
                 'key' => $key,
-                'current' => 1,
+                'current' => 0,
                 'reset_at' => time() + $resetAt,
             ]
         );
@@ -30,8 +30,8 @@ final class DatabaseProvider extends StorageProvider
         return $this->db::get(
             table: 'cq_ratelimit',
             columns: [
-                'current',
-                'reset_at',
+                'current [Int]',
+                'reset_at [Int]',
             ],
             where: ['key' => $key]
         );
