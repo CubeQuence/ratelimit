@@ -1363,12 +1363,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/phpinsights.git",
-                "reference": "4b630770b3ce6cacb62663ff0c8b8286b0b58056"
+                "reference": "f2c7c1f7ed261027ecf45eb0b61a754454ce65d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/phpinsights/zipball/4b630770b3ce6cacb62663ff0c8b8286b0b58056",
-                "reference": "4b630770b3ce6cacb62663ff0c8b8286b0b58056",
+                "url": "https://api.github.com/repos/nunomaduro/phpinsights/zipball/f2c7c1f7ed261027ecf45eb0b61a754454ce65d0",
+                "reference": "f2c7c1f7ed261027ecf45eb0b61a754454ce65d0",
                 "shasum": ""
             },
             "require": {
@@ -1394,7 +1394,7 @@
                 "symfony/http-client": "^4.3|^5.0"
             },
             "require-dev": {
-                "ergebnis/phpstan-rules": "^0.14.0",
+                "ergebnis/phpstan-rules": "^0.15.0",
                 "illuminate/console": "^5.8|^6.0|^7.0|^8.0",
                 "illuminate/support": "^5.8|^6.0|^7.0|^8.0",
                 "mockery/mockery": "^1.0",
@@ -1466,7 +1466,7 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2021-03-21T11:04:47+00:00"
+            "time": "2021-04-20T07:12:17+00:00"
         },
         {
             "name": "object-calisthenics/phpcs-calisthenics-rules",
